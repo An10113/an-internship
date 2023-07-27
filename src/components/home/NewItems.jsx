@@ -114,7 +114,7 @@ const NewItems = () => {
                   <Link to="/item-details">
                     <h4>{data.title}</h4>
                   </Link>
-                  <div className="nft__item_price">{data.price}</div>
+                  <div className="nft__item_price">{`${data.price} ETH`}</div>
                   <div className="nft__item_like">
                     <i className="fa fa-heart"></i>
                     <span>{data.likes}</span>
