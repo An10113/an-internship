@@ -7,7 +7,7 @@ const formatTime = (time) => {
     let secondsText = Math.floor(time) % 60
     let minutesText = Math.floor(minutes) % 60
     let hoursText = Math.floor(hours)
-    return `${hoursText.toString().padStart(2, "0")} : ${minutesText.toString().padStart(2, "0")} : ${secondsText.toString().padStart(2, "0")}`
+    return `${hoursText.toString().padStart(2, "0")}h ${minutesText.toString().padStart(2, "0")}m ${secondsText.toString().padStart(2, "0")}s`
 }
 
 export default function Countdown(time) {
@@ -18,7 +18,6 @@ export default function Countdown(time) {
         clearInterval(timer.current)
       }
     },[count])
-
       useEffect(() => {
         timer.current = setInterval(() => {
           setCount(time => time - 1 )
