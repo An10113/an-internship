@@ -4,6 +4,7 @@ import AuthorItems from "../components/author/AuthorItems";
 import { Link, useParams } from "react-router-dom";
 import AuthorImage from "../images/author_thumbnail.jpg";
 import axios from "axios";
+import Skeleton from "../components/UI/Skeleton";
 
 const Author = () => {
   const {id} = useParams()
@@ -21,7 +22,6 @@ const Author = () => {
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
         <div id="top"></div>
-
         <section
           id="profile_banner"
           aria-label="section"
@@ -34,11 +34,12 @@ const Author = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-12">
+                { loading ?
+                <>
                 <div className="d_profile de-flex">
                   <div className="de-flex-col">
                     <div className="profile_avatar">
                       <img src={data.authorImage} alt="" />
-
                       <i className="fa fa-check"></i>
                       <div className="profile_name">
                         <h4>
@@ -52,7 +53,7 @@ const Author = () => {
                           </button>
                         </h4>
                       </div>
-                    </div>
+                  </div>
                   </div>
                   <div className="profile_follow de-flex">
                     <div className="de-flex-col">
@@ -63,15 +64,42 @@ const Author = () => {
                     </div>
                   </div>
                 </div>
+                </> : <>
+                <div className="d_profile de-flex">
+                  <div className="de-flex-col">
+                    <div className="profile_avatar">
+                    <Skeleton width={150} height={150} borderRadius={9999} />
+                      <div className="profile_name">
+                        <h4>
+                        <Skeleton width={100} height={14} borderRadius={10} />
+                          <span className="profile_username"><Skeleton width={30} height={14} borderRadius={10} /></span>
+                          <span id="wallet" className="profile_wallet">
+                          <Skeleton width={200} height={14} borderRadius={10} />
+                          </span>
+                        </h4>
+                      </div>
+                  </div>
+                  </div>
+                  <div className="profile_follow de-flex">
+                    <div className="de-flex-col">
+                      <div className="profile_follower"><Skeleton width={70} height={14} borderRadius={10} /></div>
+                      <Link to="#" className="btn-main">
+                        Follow
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                </>
+                }
               </div>
-
               <div className="col-md-12">
                 <div className="de_tab tab_simple">
                   <AuthorItems author={data}/>
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+
         </section>
       </div>
     </div>
