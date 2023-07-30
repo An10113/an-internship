@@ -14,12 +14,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.skeleton {
-    background-color: rgb(227, 227, 227);
-    animation: pulse 1s infinite;
-  }
-  @keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 0.8; }
-    100% { opacity: 0.5; }
-  }
+h1{
+  font-size: 56px;
+  font-weight: bold;
+}
+h2{
+  font-size: 36px;
+  font-weight: bold;
+}

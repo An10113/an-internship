@@ -7,9 +7,12 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   library.add(faAngleLeft, faAngleRight)
+  AOS.init()
   return (
     <Router>
       <Nav />

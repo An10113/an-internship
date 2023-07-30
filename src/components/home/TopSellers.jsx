@@ -28,7 +28,7 @@ const TopSellers = () => {
             <ol className="author_list">
               { loading ?
               data.map((data) => (
-                <li key={data.id}>
+                <li key={data.id} data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                   <div className="author_list_pp">
                     <Link to={`/author/${data.authorId}`}>
                       <img
