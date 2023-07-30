@@ -69,7 +69,7 @@ const NewItems = () => {
           <FontAwesomeIcon icon={faAngleLeft} className="hover:scale-110 transition-transform rounded-full w-4 h-4 p-2 left-0 border-black border-1 absolute top-[50%] bg-white" onClick={() => slider?.current?.slickPrev()} />
           <Slider {...settings}  ref={slider}> 
           {data.map((data) => (
-            <div className="px-2 sm:px-1" key={data.id}>
+            <div className="px-2 sm:px-1" key={data.id} data-aos="fade-right">
               <div className="nft__item">
                 <div className="author_list_pp">
                   <Link

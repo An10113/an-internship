@@ -67,7 +67,7 @@ const HotCollections = () => {
           <FontAwesomeIcon icon={faAngleLeft} className="hover:scale-110 transition-transform rounded-full w-4 h-4 p-2 left-0 border-black border-1 absolute top-[50%] bg-white" onClick={() => slider?.current?.slickPrev()} />
           <Slider {...settings}  ref={slider}> 
             {data.map((nft) => (
-            <div className="px-2 sm:px-1" key={nft.id}>
+            <div className="px-2 sm:px-1" key={nft.id} data-aos="fade-left">
               <div className="nft_coll">
                 <div className="nft_wrap">
                   <Link to={`/item-details/${nft.nftId}`}>

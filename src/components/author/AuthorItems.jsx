@@ -22,7 +22,7 @@ const AuthorItems = ({author}) => {
           { loading ? 
           data.map((data) => (
             <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={data.id}>
-              <div className="nft__item">
+              <div className="nft__item" data-aos="fade-up">
                 <div className="author_list_pp">
                   <Link to="">
                     <img className="lazy" src={author.authorImage} alt="" />
